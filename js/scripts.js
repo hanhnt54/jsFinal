@@ -1,4 +1,4 @@
-function upDate(previewPic) {
+/*function upDate(previewPic) {
     // Log to check that the event is triggering
     console.log("Hover event triggered!");
 
@@ -21,4 +21,27 @@ function undo() {
 
     // Revert the text to the original
     document.getElementById('image').innerText = "Hover over an image below to display here.";
+
+}*/
+window.onload = function () {
+    console.log("Page loaded. Adding tabindex to images.");
+    addTabFocus();
+};
+
+function upDate(previewPic) {
+    console.log("Event triggered!");
+    document.getElementById('image').innerText = previewPic.alt;
+    document.getElementById('image').style.backgroundImage = "url('" + previewPic.src + "')";
+}
+
+function undo() {
+    document.getElementById('image').innerText = "Hover over an image below to display here.";
+    document.getElementById('image').style.backgroundImage = "url('original-image.jpg')";
+}
+
+function addTabFocus() {
+    const images = document.querySelectorAll('.thumbnail');
+    for (let i = 0; i < images.length; i++) {
+        images[i].setAttribute('tabindex', '0');
+    }
 }
