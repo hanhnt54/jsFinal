@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Effect</title>
+    <style>
+        #image {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            background-image: url('original-image.jpg');
+            background-size: cover;
+            text-align: center;
+            line-height: 300px;
+            color: white;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image">Hover over an image below to display here.</div>
+    <img src="./images/image1.jpg" alt="Image 1" class="thumbnail" onmouseover="upDate(this)" onmouseout="undo()">
+    <img src="./images/image2.jpg" alt="Image 2" class="thumbnail" onmouseover="upDate(this)" onmouseout="undo()">
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>
